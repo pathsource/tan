@@ -1,0 +1,10 @@
+body {
+  @include font-smoothing();
+}
+
+a {
+  color: $link_grey;
+  &:hover {
+    color: $orange;
+  }
+}

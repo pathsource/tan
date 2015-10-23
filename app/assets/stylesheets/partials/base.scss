@@ -1,0 +1,29 @@
+// Font weights
+$light: 100;
+$regular: 400;
+$bold: 600;
+
+// Base Font
+$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-weight: $regular;
+$base-font-size: 14px;
+$base-color: #333333;
+$base-line-height: 20px;
+
+// Base Background
+$background-color: #f8f8f8;
+
+// Base width
+$contianer-width: 1024px;
+
+// Base colors
+$orange: #f1583c;
+$red: #e60012;
+$font_gray: #666;
+$link_blue: #0088CC;
+$link_grey: #333333;
+$grey: #f3f3f3;
+$white: #fff;
+$blue: #192c61;
+
+@import "../modules/all";

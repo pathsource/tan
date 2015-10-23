@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hackathon</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1170">
+  <%= stylesheet_link_tag 'ged', media: 'all'%>
+  <%= stylesheet_link_tag 'application', media: 'all'%>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= render 'template/header' %>
+  <%= render 'template/flash' %>
+  <%= yield %>
+  <%= render 'template/footer' %>
+
+  <%= javascript_include_tag 'application' %>
+  <%= yield :js %>
+</body>
+</html>

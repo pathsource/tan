@@ -1,0 +1,26 @@
+development:
+  adapter: postgresql
+  database: hackathon_development
+  host: localhost
+  username: postgres
+  password:
+  port: 5432
+  encoding: UTF8
+
+test:
+  adapter: postgresql
+  database: hackathon_test
+  host: localhost
+  username: postgres
+  password:
+  port: 5432
+  encoding: UTF8
+
+production:
+  adapter: postgresql
+  database: hackathon_development
+  host: localhost
+  username: postgres
+  password:
+  port: 5432
+  encoding: UTF8
