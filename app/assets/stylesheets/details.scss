@@ -13,6 +13,7 @@
       width: 32%;
       text-align: center;
       color: #fff;
+      font-size: 12px;
       img {
         display: block;
         margin: auto;
@@ -23,7 +24,7 @@
   }
   .address {
     font-size: 18px;
-    margin-top: 24px;
+    margin-top: 30px;
     color: #fff;
     text-align: center;
   }
@@ -53,12 +54,14 @@
     padding: 48px 2%;
     border-top: 1px solid #ebebeb;
     border-bottom: 1px solid #ebebeb;
+    line-height: 18px;
   }
   .intro {
     font-size: 14px;
     color: #333;
     margin: 0px 4%;
     padding: 34px 2%;
+    line-height: 18px;
     span {
       color: #2aa2cd;
     }
@@ -73,6 +76,7 @@
         float: left;
         height: 18px;
         margin-left: 14px;
+        margin-top: -2px;
       }
     }
   }
