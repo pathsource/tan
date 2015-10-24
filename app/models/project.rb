@@ -2,6 +2,7 @@ class Project < ActiveRecord::Base
 
 	has_many :participations
 	has_one :puzzle
+  has_many :comments
 
   def distance(coordinates)
     coordinates ||= []
