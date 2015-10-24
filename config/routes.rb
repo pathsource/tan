@@ -3,5 +3,11 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :projects
+  resources :projects do
+    member do
+      post 'start'
+      post 'checkin'
+      post 'validate' 
+    end
+  end
 end
