@@ -17,8 +17,8 @@ namespace :db do
   end
 
   task add_location_info: :environment do
-    Project.find(address: '昙华林').update_attributes(location: '武昌区昙华林三义村特1号')
-    Project.find(address: '青年大教堂').update_attributes(location: '武汉光谷世界城意大利风情街')
-    Project.find(address: '红楼').update_attributes(location: '武汉市武昌区武珞路1号')
+    Project.find_by(address: '昙华林').update_attributes(location: '武昌区昙华林三义村特1号')
+    Project.find_by(address: '青年大教堂').update_attributes(location: '武汉光谷世界城意大利风情街')
+    Project.find_by(address: '红楼').update_attributes(location: '武汉市武昌区武珞路1号')
   end
 end
