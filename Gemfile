@@ -30,7 +30,6 @@ group :development do
   gem 'binding_of_caller', '~> 0.7.1'
   gem 'thin', '~> 1.5.1'
   gem 'mina', git: 'https://github.com/pathsource/mina.git'
-  gem 'mina-sidekiq'
 end
 
 group :development, :test do

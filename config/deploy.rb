@@ -2,7 +2,6 @@ require 'mina/bundler'
 require 'mina/rails'
 require 'mina/git'
 require 'mina/rbenv'  # for rbenv support. (http://rbenv.org)
-require 'mina_sidekiq/tasks'
 
 # Basic settings:
 #   domain       - The hostname to SSH to.
@@ -20,7 +19,7 @@ set :repository, 'git@github.com:pathsource/tan.git'
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
 # They will be linked in the 'deploy:link_shared_paths' step.
-set :shared_paths, ['config/database.yml', 'log', 'tmp', 'config/secrets', 'config/application.yml' ]
+set :shared_paths, ['config/database.yml', 'log', 'tmp']
 
 # Optional settings:
 set :user, 'ubuntu'    # Username in the server to SSH to.
@@ -68,7 +67,6 @@ task :deploy => :environment do
   deploy do
     # Put things that will set up an empty directory into a fully set-up
     # instance of your project.
-    invoke :'sidekiq:quiet'
     invoke :'git:clone'
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
@@ -79,45 +77,8 @@ task :deploy => :environment do
 
     to :launch do
       queue! "touch #{deploy_to}/#{current_path}/tmp/restart.txt"
-      queue! %[whenever --update-crontab -s 'environment=#{rails_env}' -f #{deploy_to}/#{shared_path}/config/schedule.rb]
-      invoke :'sidekiq:restart'
     end
   end
-end
-
-desc "add tmply task for processing db for each deploy"
-task :predb_process do
-  # here should only add tmply task which only used for specific deployment
-  # queue! "bundle exec rake clear_video_schools"
-end
-
-desc "Start or restart delayed_job"
-task :up_delayed_job do
-  echo "-----> Restart Delayed Job"
-  queue! "bundle exec script/delayed_job -n 2 restart"
-end
-
-desc "Init redis data, should only did once"
-task :init_redis_data do
-  queue! "bundle exec rake create_redis_area_data"
-end
-
-desc "Run rake with mina, ex. mina task['test']"
-task :run_rake, [:rake_task] => :environment do |t, args|
-  queue! "cd #{deploy_to}/#{current_path}"
-  queue! "ls"
-  queue! "bundle exec rake #{args[:rake_task]}"
-  # queue! "bundle exec rake testing"
-end
-
-desc "Show server logs"
-task :logs do
-  if rails_env == 'production'
-    queue 'echo "Production logs:"'
-  elsif rails_env == 'staging'
-    queue 'echo "Staging logs:"'
-  end
-  queue! "tail -f -n 50 #{deploy_to}/#{current_path}/log/#{rails_env}.log"
 end
 
 desc "Sever restart"
@@ -126,10 +87,3 @@ task :restart do
   queue "touch #{deploy_to}/#{current_path}/tmp/restart.txt"
   queue 'echo "OK"'
 end
-
-# For help in making your deploy script, see the Mina documentation:
-#
-#  - http://nadarei.co/mina
-#  - http://nadarei.co/mina/tasks
-#  - http://nadarei.co/mina/settings
-#  - http://nadarei.co/mina/helpers
