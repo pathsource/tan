@@ -12,7 +12,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     # @user = User.first
     # @parti = Participation.find_or_initialize_by(project_id: @project.id, user_id: @user.id)
-    @parti = Participations.create(project_id: @project.id, status: 'doing')
+    @parti = Participation.create(project_id: @project.id, status: 'doing')
     render json: { success: true }
   end
 
@@ -31,6 +31,7 @@ class ProjectsController < ApplicationController
     # @user = User.first
     if @project.puzzle.answer == params[:answer]
       @parti = Participation.find_by(project_id: @project.id)
+      render json: {success: false } and return if @parti.blank?
       @parti.update(status: 'finished')
       render json: { success: true }
     else
