@@ -12,8 +12,8 @@ require 'mina_sidekiq/tasks'
 
 # prod_domain, staging_domain
 set :rails_env, 'production'
-set :domain, '54.183.16.204'
-set :branch, ENV['branch'] || 'production'
+set :domain, 'tan.maimoe.com' #'54.183.16.204'
+set :branch, ENV['branch'] || 'master'
 set :deploy_to, '/home/ubuntu/www/tan/'
 
 set :repository, 'git@github.com:pathsource/tan.git'
