@@ -20,6 +20,8 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     # @user = User.first
     if @project.distance([params[:coordinates].try(&:first).to_f, params[:coordinates].try(&:last).to_f]) <= 2
+      @parti = Participation.where(project_id: @project.id).order(:id).last
+      @parti.update(status: 'arrived')
       render json: { success: true, content: @project.puzzle.answer, hint: @project.puzzle.hint }
     else
       render json: { success: false }
@@ -30,8 +32,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     # @user = User.first
     if @project.puzzle.answer == params[:answer]
-      @parti = Participation.find_by(project_id: @project.id)
-      render json: {success: false } and return if @parti.blank?
+      @parti = Participation.where(project_id: @project.id).order(:id).last
       @parti.update(status: 'finished')
       render json: { success: true }
     else
