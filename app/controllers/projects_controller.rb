@@ -15,8 +15,8 @@ class ProjectsController < ApplicationController
   def checkin
     @project = Project.find(params[:id])
     @user = User.first
-    if @project.distance <= 2
-      render json: { success: true, content: @project.puzzle.answer, hit: @project.puzzle.hint }
+    if @project.distance([params[:coordinates].try(&:first).to_f, params[:coordinates].try(&:last).to_f]) <= 2
+      render json: { success: true, content: @project.puzzle.answer, hint: @project.puzzle.hint }
     else
       render json: { success: false }
     end

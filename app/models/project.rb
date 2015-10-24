@@ -1,7 +1,7 @@
 class Project < ActiveRecord::Base
 
 	has_many :participations
-	has_one :puzzles
+	has_one :puzzle
 
   def distance(coordinates)
     coordinates ||= []
