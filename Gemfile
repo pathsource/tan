@@ -28,6 +28,8 @@ group :development do
   gem 'better_errors', '~> 1.1.0'
   gem 'binding_of_caller', '~> 0.7.1'
   gem 'thin', '~> 1.5.1'
+  gem 'mina', git: 'https://github.com/pathsource/mina.git'
+  gem 'mina-sidekiq'
 end
 
 group :development, :test do
