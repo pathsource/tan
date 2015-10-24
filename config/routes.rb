@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       post 'start'
       post 'checkin'
       post 'validate' 
+      get 'result'
     end
   end
 end

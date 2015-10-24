@@ -40,4 +40,8 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def result
+    @project = Project.find(params[:id])
+  end
+
 end

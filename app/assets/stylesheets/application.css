@@ -1,5 +1,7 @@
 /*
  * include all third party css
+ *= require reset
  *= require jquery.ui.all
  *= require details
+ *= require result
  */
