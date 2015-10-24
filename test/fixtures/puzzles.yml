@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: MyString
+  answer: MyString
+  project_id: 1
+  hint: MyString
+
+two:
+  content: MyString
+  answer: MyString
+  project_id: 1
+  hint: MyString

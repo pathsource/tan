@@ -13,13 +13,13 @@ gem 'jquery-rails'
 gem 'jquery-ui-sass-rails'
 gem 'compass-rails', '~> 2.0.0'
 gem 'sass-rails', '~> 4.0.3'
-gem 'simple_form'
 gem 'bootstrap-sass', '~> 3.3.5'
 
 # misc
 gem 'kaminari', '~> 0.15.1'
 gem 'nokogiri'
-gem 'devise'
+gem 'rabl'
+# gem 'devise'
 
 
 group :development do
