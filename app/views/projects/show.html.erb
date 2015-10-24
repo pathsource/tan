@@ -1,9 +1,31 @@
 <div class="details">
-  <%= image_tag "http://7xleh2.dl1.z0.glb.clouddn.com/Top%20pic.png", class: "main-image" %>
+  <%= image_tag "http://7xleh2.dl1.z0.glb.clouddn.com/pic.png", class: "main-image" %>
+  <div class="small-infos">
+    <div class="distance">
+      <%= image_tag "http://7xleh2.dl1.z0.glb.clouddn.com/location.png" %>
+      <span>距离<%= @project.distance([0, 0]) %>km</span>
+    </div>
+    <div class="attendee">
+      <%= image_tag "http://7xleh2.dl1.z0.glb.clouddn.com/people.png" %>
+      <span>234人参加</span>
+    </div>
+    <div class="comments">
+      <%= image_tag "http://7xleh2.dl1.z0.glb.clouddn.com/review.png" %>
+      <span>45个评论</span>
+    </div>
+  </div>
   <div class="address"><%= @project.address %></div>
-  <div class="location"></div>
+  <div class="location clearfix">
+    <%= image_tag "http://7xleh2.dl1.z0.glb.clouddn.com/address.png", class: "location-image" %>
+    <div>
+      <%= @project.location %>  
+    </div>
+  </div>
   <div class="description"><%= @project.description %></div>
   <div class="intro">
+    <%= image_tag "http://7xleh2.dl1.z0.glb.clouddn.com/Donation.png", class: "donate-image" %>
+    <br>
+    <br>
     <div class="">
       <span>捐助项目:</span> 天翔助学计划。 天翔助学计划接收一对一的赞助， 希望能给贵州山区的孩子送去温暖.
     </div>

@@ -1,45 +1,79 @@
 .details {
-  // width: 749px;
   width: 100%;
   margin: 0 auto;
   padding-bottom: 50px;
-  // position: relative;
   .main-image {
-    // position: absolute;
-    // top: 0;
-    // z-index: -1px;
     width: 100%;
   }
+  .small-infos {
+    padding: 0px 5%;
+    margin-top: -108px;
+    > div {
+      display: inline-block;
+      width: 32%;
+      text-align: center;
+      color: #fff;
+      img {
+        display: block;
+        margin: auto;
+        height: 26px;
+        margin-bottom: 6px;
+      }
+    }
+  }
   .address {
-  	font-size: 18px;
-  	color: #333;
-  	text-align: center;
-  	margin-top: -42px;
+    font-size: 18px;
+    margin-top: 24px;
+    color: #fff;
+    text-align: center;
+  }
+  .clearfix:after {
+    content: " ";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+  }
+  .location {
+    padding: 20px 6%;
+    div {
+      float: left;
+      margin-top: 5px;
+      margin-left: 14px;
+    }
+  }
+  .location-image {
+    height: 28px;
+    float: left;
   }
   .description {
-  	font-size: 14px;
-  	color: #666;
-  	margin: 0px 20px;
-  	padding: 48px 15px;
-  	border-top: 1px solid #ebebeb;
-  	border-bottom: 1px solid #ebebeb;
+    font-size: 14px;
+    color: #666;
+    margin: 0px 4%;
+    padding: 48px 2%;
+    border-top: 1px solid #ebebeb;
+    border-bottom: 1px solid #ebebeb;
   }
   .intro {
-  	font-size: 14px;
-  	color: #333;
-  	margin: 0px 20px;
-  	padding: 34px 15px;
-  	span {
-  		color: #2aa2cd;
-  	}
-  	.sponsor {
-  		float: left;
-  	}
-  	img {
-  		float: left;
-  		height: 30px;
-  		margin-top: 2px;
-  		margin-left: 14px;
-  	}
+    font-size: 14px;
+    color: #333;
+    margin: 0px 4%;
+    padding: 34px 2%;
+    span {
+      color: #2aa2cd;
+    }
+    .donate-image {
+      height: 20px;
+    }
+    .sponsor {
+      float: left;
+    }
+    > div {
+      img {
+        float: left;
+        height: 18px;
+        margin-left: 14px;
+      }
+    }
   }
 }
