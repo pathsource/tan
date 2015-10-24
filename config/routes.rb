@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :projects do
     member do
       post 'start'
-      get 'checkin'
+      post 'checkin'
       post 'validate' 
     end
   end
