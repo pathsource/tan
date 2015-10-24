@@ -29,6 +29,13 @@ namespace :db do
     Project.find_by(address: '省博').update_attributes(unit_type: 'book', unit_steps_count: 10000)
     Project.find_by(address: '黄鹤楼').update_attributes(unit_type: 'book', unit_steps_count: 10000)
     Project.find_by(address: '武汉大学').update_attributes(unit_type: 'book', unit_steps_count: 10000)
-
   end
+
+  task add_missing_image: :environment do
+    Project.find_by(address: '红楼').update_attributes(image: 'http://7xleh2.dl1.z0.glb.clouddn.com/hong_lou.png')
+    Project.find_by(address: '省博').update_attributes(image: 'http://7xleh2.dl1.z0.glb.clouddn.com/sheng_bo.png')
+    Project.find_by(address: '黄鹤楼').update_attributes(image: 'http://7xleh2.dl1.z0.glb.clouddn.com/huanghelou.png')
+    Project.find_by(address: '武汉大学').update_attributes(image: 'http://7xleh2.dl1.z0.glb.clouddn.com/wu_da.png')
+  end
+
 end
