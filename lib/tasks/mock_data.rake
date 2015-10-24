@@ -21,4 +21,14 @@ namespace :db do
     Project.find_by(address: '青年大教堂').update_attributes(location: '武汉光谷世界城意大利风情街')
     Project.find_by(address: '红楼').update_attributes(location: '武汉市武昌区武珞路1号')
   end
+
+  task unit_steps_count: :environment do
+    Project.find_by(address: '昙华林').update_attributes(unit_type: 'book', unit_steps_count: 10000)
+    Project.find_by(address: '青年大教堂').update_attributes(unit_type: 'book', unit_steps_count: 10000)
+    Project.find_by(address: '红楼').update_attributes(unit_type: 'book', unit_steps_count: 10000)
+    Project.find_by(address: '省博').update_attributes(unit_type: 'book', unit_steps_count: 10000)
+    Project.find_by(address: '黄鹤楼').update_attributes(unit_type: 'book', unit_steps_count: 10000)
+    Project.find_by(address: '武汉大学').update_attributes(unit_type: 'book', unit_steps_count: 10000)
+
+  end
 end
