@@ -20,7 +20,7 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem 'kaminari', '~> 0.15.1'
 gem 'nokogiri'
 gem 'rabl-rails'
-gem 'devise'
+# gem 'devise'
 
 gem 'geocoder'
 
