@@ -80,6 +80,16 @@ task :deploy => :environment do
   end
 end
 
+desc "Show server logs"
+task :logs do
+  if rails_env == 'production'
+    queue 'echo "Production logs:"'
+  elsif rails_env == 'staging'
+    queue 'echo "Staging logs:"'
+  end
+  queue! "tail -f -n 50 #{deploy_to}/#{current_path}/log/#{rails_env}.log"
+end
+
 desc "Sever restart"
 task :restart do
   queue 'echo "Server restarting..."'

@@ -15,4 +15,10 @@ namespace :db do
     Project.find_by(address: '昙华林').create_puzzle(content: '艺术沙龙', hint: '钱基博所居住的房间', answer: SecureRandom.base64(32))
     Project.find_by(address: '青年大教堂').create_puzzle(content: 'row2pa', hint: 'PathSource', answer: SecureRandom.base64(32))
   end
+
+  task add_location_info: :environment do
+    Project.find(address: '昙华林').update_attributes(location: '武昌区昙华林三义村特1号')
+    Project.find(address: '青年大教堂').update_attributes(location: '武汉光谷世界城意大利风情街')
+    Project.find(address: '红楼').update_attributes(location: '武汉市武昌区武珞路1号')
+  end
 end
