@@ -1,7 +1,8 @@
 class ProjectsController < ApplicationController
   
   def index
-    @projects = Project.all
+    @projects = []
+    address_order.each {|x| @projects << Project.find_by(address: x)}
   end
 
   def show
@@ -42,6 +43,17 @@ class ProjectsController < ApplicationController
 
   def result
     @project = Project.find(params[:id])
+  end
+
+  private
+  def address_order
+    if params[:type] == 'walking'
+      ['青年大教堂', '红楼', '省博', '黄鹤楼', '武汉大学', '昙华林']
+    elsif params[:type] == 'bicycle'
+      %w(武汉大学 昙华林 黄鹤楼 省博 青年大教堂 红楼)
+    else
+      %w(黄鹤楼 省博 昙华林 红楼 青年大教堂 武汉大学)
+    end
   end
 
 end
