@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151024060952) do
+ActiveRecord::Schema.define(version: 20151024071625) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,12 +21,15 @@ ActiveRecord::Schema.define(version: 20151024060952) do
     t.text     "description"
     t.decimal  "lat"
     t.decimal  "lon"
-    t.string   "images",      default: "--- []\n"
+    t.string   "image",       default: "--- []\n"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
+    t.string   "address"
+    t.string   "background"
+    t.string   "sponser"
   end
 
-  add_index "projects", ["images"], name: "index_projects_on_images", using: :btree
+  add_index "projects", ["image"], name: "index_projects_on_image", using: :btree
 
   create_table "puzzles", force: :cascade do |t|
     t.string   "content"

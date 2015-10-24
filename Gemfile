@@ -18,8 +18,10 @@ gem 'bootstrap-sass', '~> 3.3.5'
 # misc
 gem 'kaminari', '~> 0.15.1'
 gem 'nokogiri'
-gem 'rabl'
-# gem 'devise'
+gem 'rabl-rails'
+gem 'devise'
+
+gem 'geocoder'
 
 
 group :development do
