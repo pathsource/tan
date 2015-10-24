@@ -4,6 +4,10 @@ class ProjectsController < ApplicationController
     @projects = Project.all
   end
 
+  def show
+    @project = Project.find(params[:id])
+  end
+
   def start
     @project = Project.find(params[:id])
     @user = User.first
