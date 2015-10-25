@@ -2,6 +2,9 @@ Project for 1024 Hackathon
 
 Hackathon Wuhan 2015 项目提交样例
 
+客户端repo: https://github.com/pathsource/tan-ios
+服务端repo: https://github.com/pathsource/tan
+
 #心途
 
 ##项目描述
