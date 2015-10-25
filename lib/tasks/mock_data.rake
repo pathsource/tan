@@ -38,4 +38,13 @@ namespace :db do
     Project.find_by(address: '武汉大学').update_attributes(image: 'http://7xleh2.dl1.z0.glb.clouddn.com/wu_da.png')
   end
 
+  task add_detail_image: :environment do
+    Project.find_by(address: '武汉大学').update_attributes(detail: 'http://7xleh2.dl1.z0.glb.clouddn.com/detail_toppic.png')
+    Project.find_by(address: '红楼').update_attributes(detail: 'http://7xleh2.dl1.z0.glb.clouddn.com/detail_toppic2.png')
+    Project.find_by(address: '省博').update_attributes(detail: 'http://7xleh2.dl1.z0.glb.clouddn.com/detail_toppic3.png')
+    Project.find_by(address: '昙华林').update_attributes(detail: 'http://7xleh2.dl1.z0.glb.clouddn.com/detail_toppic4.png')
+    Project.find_by(address: '黄鹤楼').update_attributes(detail: 'http://7xleh2.dl1.z0.glb.clouddn.com/detail_toppic5-1.png', image: "http://7xleh2.dl1.z0.glb.clouddn.com/huanghelou_list.png")
+    Project.find_by(address: '青年大教堂').update_attributes(detail: 'http://7xleh2.dl1.z0.glb.clouddn.com/church-in-detail.png')
+  end
+
 end
